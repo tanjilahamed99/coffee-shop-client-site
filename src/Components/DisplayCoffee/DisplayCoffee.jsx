@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { FaPen, FaRegEye } from 'react-icons/fa';
 import { AiFillDelete } from "react-icons/ai";
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const DisplayCoffee = ({ coffee }) => {
     const { _id, name, chef, photo } = coffee;
@@ -46,9 +47,11 @@ const DisplayCoffee = ({ coffee }) => {
                 <p className='font-semibold text-xl'>Price: <span className='text-[#5C5B5B]'>190</span>TK</p>
             </div>
             <div className='space-y-3'>
-                <div className='bg-[#D2B48C] p-3 rounded-lg'>
-                    <FaRegEye className='text-white'></FaRegEye>
-                </div>
+                <Link to={`/details/${_id}`}>
+                    <div className='bg-[#D2B48C] p-3 rounded-lg'>
+                        <FaRegEye className='text-white'></FaRegEye>
+                    </div>
+                </Link>
                 <div className='bg-[#3C393B] p-3 rounded-lg'>
                     <FaPen className='text-white'></FaPen>
                 </div>
