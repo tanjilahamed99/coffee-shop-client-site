@@ -52,9 +52,11 @@ const DisplayCoffee = ({ coffee }) => {
                         <FaRegEye className='text-white'></FaRegEye>
                     </div>
                 </Link>
-                <div className='bg-[#3C393B] p-3 rounded-lg'>
-                    <FaPen className='text-white'></FaPen>
-                </div>
+                <Link to={`/update/${_id}`}>
+                    <div className='bg-[#3C393B] p-3 rounded-lg'>
+                        <FaPen className='text-white'></FaPen>
+                    </div>
+                </Link>
                 <div onClick={() => handleDeleteCoffee(_id)} className='bg-[#EA4744] p-3 rounded-lg'>
                     <AiFillDelete className='text-white'></AiFillDelete>
                 </div>
