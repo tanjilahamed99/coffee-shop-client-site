@@ -4,7 +4,7 @@ const Navbar = () => {
 
             <div className="flex justify-center gap-10 items-center ">
                 <img className="w-16" src='https://i.ibb.co/XyHPtNc/logo1.png' alt="" />
-                <h2 className="text-white font-bold text-2xl">Espresso Emporium</h2>
+                <h2 className="text-white font-bold text-4xl">Espresso Emporium</h2>
             </div>
         </div>
     );
