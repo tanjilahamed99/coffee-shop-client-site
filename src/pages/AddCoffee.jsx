@@ -1,5 +1,6 @@
 import { MdArrowCircleLeft } from "react-icons/md";
 import { Link } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 const AddCoffee = () => {
 
@@ -16,6 +17,26 @@ const AddCoffee = () => {
 
         const newCoffee = { name, chef, supplier, taste, category, details, photo }
         console.log(newCoffee)
+
+        fetch('http://localhost:5000/coffees', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newCoffee)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.acknowledged) {
+                    Swal.fire(
+                        'Good job!',
+                        'Coffee added successful',
+                        'success'
+                      )
+                }
+            })
+
     }
 
     return (
@@ -31,37 +52,37 @@ const AddCoffee = () => {
                 <div className="grid grid-cols-2 items-center gap-5 mt-10   w-full">
                     <div className="">
                         <h2 className="text-lg">Name</h2>
-                        <input name="name" type="text" placeholder="Enter coffee name"
+                        <input required name="name" type="text" placeholder="Enter coffee name"
                             className="input input-bordered  w-full" />
                     </div>
                     <div className="">
                         <h2 className="text-lg">Chef</h2>
-                        <input name="chef" type="text" placeholder="Chef"
+                        <input required name="chef" type="text" placeholder="Chef"
                             className="input input-bordered w-full" />
                     </div>
                     <div className="">
                         <h2 className="text-lg">Supplier</h2>
-                        <input name="supplier" type="text" placeholder="Supplier"
+                        <input required name="supplier" type="text" placeholder="Supplier"
                             className="input input-bordered w-full" />
                     </div>
                     <div className="">
                         <h2 className="text-lg">Taste</h2>
-                        <input name="taste" type="text" placeholder="Taste"
+                        <input required name="taste" type="text" placeholder="Taste"
                             className="input input-bordered w-full" />
                     </div>
                     <div className="w-full">
                         <h2 className="text-lg">Category</h2>
-                        <input name="category" type="text" placeholder="Category"
+                        <input required name="category" type="text" placeholder="Category"
                             className="input input-bordered  w-full" />
                     </div>
                     <div className="w-full ">
                         <h2 className="text-lg">Details</h2>
-                        <input name="details" type="text" placeholder="Details"
+                        <input required name="details" type="text" placeholder="Details"
                             className="input input-bordered  w-full" />
                     </div>
                     <div className="w-full col-span-2">
                         <h2 className="text-lg">Photo</h2>
-                        <input name="photo" type="text" placeholder="Photo"
+                        <input required name="photo" type="text" placeholder="Photo"
                             className="input input-bordered  w-full" />
                     </div>
                     <input type="submit" className="btn bg-[#E3B577] col-span-2" value="Add Coffee" />
