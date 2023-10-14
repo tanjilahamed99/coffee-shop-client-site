@@ -1,7 +1,18 @@
+import { useEffect, useState } from "react";
 import { MdCoffee } from "react-icons/md";
 import { Link } from "react-router-dom";
+import DisplayCoffee from "../DisplayCoffee/DisplayCoffee";
 
 const Coffees = () => {
+
+    const [coffees, setCoffees] = useState([])
+
+    useEffect(() => {
+        fetch('http://localhost:5000/coffees')
+            .then(res => res.json())
+            .then(data => setCoffees(data))
+    }, [])
+
     return (
         <div>
             <div className="text-center my-10">
@@ -12,9 +23,9 @@ const Coffees = () => {
                     <MdCoffee className="text-black"></MdCoffee>
                 </button></Link>
             </div>
-            <div className="grid grid-cols-2 lg:grid-cols-4">
+            <div className="grid grid-cols-2 gap-10 container   mx-auto justify-center">
                 {
-
+                    coffees.map(coffee => <DisplayCoffee key={coffee._id} coffee={coffee}></DisplayCoffee>)
                 }
             </div>
 
