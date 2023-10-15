@@ -3,7 +3,7 @@ const Social = () => {
         <div className="mt-10">
               <p className="text-center">Follow Us Now</p>
               <h2 className="text-center font-bold text-2xl">Follow on Instagram</h2>
-            <div className="grid grid-cols-4 container gap-5 mt-5 items-center justify-center mx-auto 
+            <div className="grid grid-cols-1 px-3 md:grid-cols-2  lg:grid-cols-4 container gap-5 mt-5 items-center justify-center mx-auto 
         ">
                 <img className="w-[350px] h-[300px]" src="https://i.ibb.co/YTfcW2K/Rectangle-9.png" alt="" />
                 <img className="w-[350px] h-[300px]" src="https://i.ibb.co/cXjsxSY/Rectangle-10.png" alt="" />

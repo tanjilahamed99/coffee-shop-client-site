@@ -22,7 +22,7 @@ const UpdateCoffee = () => {
         const updateCoffee = { name, chef, supplier, taste, category, details, photo }
         console.log(updateCoffee)
 
-        fetch(`http://localhost:5000/coffees/${_id}`, {
+        fetch(`https://coffee-store-server-site-3df79a1mu-tanjil-ahameds-projects.vercel.app/coffees/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -47,16 +47,16 @@ const UpdateCoffee = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className="w-[80%] mx-auto">
+            <div className="xl:w-[80%] w-[95%] mx-auto">
                 <Link className="text-2xl font-medium " to={'/'}><p className="flex my-5 items-center gap-2"> <MdArrowCircleLeft></MdArrowCircleLeft> Back to home</p> </Link>
 
-                <form onSubmit={handleUpdateCoffee} className=" bg-[#F4F3F0] px-20 py-10">
+                <form onSubmit={handleUpdateCoffee} className=" bg-[#F4F3F0] px-4 xl:px-20 py-10">
                     <h2 className="text-center font-bold text-3xl">Update Existing Coffee Details</h2>
-                    <p className="text-center px-[200px] text-xl"> It is a long established fact that a reader will be distraceted by the readable  content of
+                    <p className="text-center xl:px-[200px] text-xl"> It is a long established fact that a reader will be distraceted by the readable  content of
                         a page when looking at its layout. The point of using Lorem Ipsum is that it hasa
                         more-or-less normal distribution of letters, as opposed to using Content here.</p>
 
-                    <div className="grid grid-cols-2 items-center gap-5 mt-10   w-full">
+                    <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-5 mt-10 w-full">
                         <div className="">
                             <h2 className="text-lg">Name</h2>
                             <input required name="name" type="text" defaultValue={name} placeholder="Enter coffee name"

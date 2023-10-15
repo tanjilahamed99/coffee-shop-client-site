@@ -2,11 +2,11 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
     return (
-        <div className="bg-[url('https://i.ibb.co/jMqc8MM/15.jpg')] flex items-center justify-around bg-cover bg-no-repeat py-2" >
+        <div className="bg-[url('https://i.ibb.co/jMqc8MM/15.jpg')] flex flex-col justify-center lg:flex-row items-center lg:justify-around bg-cover bg-no-repeat py-2" >
 
-            <div className="flex justify-center gap-10 items-center ">
+            <div className="flex justify-center lg:gap-10 items-center ">
                 <img className="w-16" src='https://i.ibb.co/XyHPtNc/logo1.png' alt="" />
-                <h2 className="text-white font-bold text-4xl">Espresso Emporium</h2>
+                <h2 className="text-white font-bold text-2xl lg:text-4xl">Espresso Emporium</h2>
             </div>
             <div className="flex gap-10 text-white text-2xl">
                 <NavLink

@@ -22,7 +22,7 @@ const SignUp = () => {
                     lastSignInTime: result.user.metadata.lastSignInTime
                 }
 
-                fetch('http://localhost:5000/user', {
+                fetch('https://coffee-store-server-site-3df79a1mu-tanjil-ahameds-projects.vercel.app/user', {
                     method: "POST",
                     headers: {
                         "content-type": "application/json"
@@ -44,12 +44,12 @@ const SignUp = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className="hero min-h-screen bg-base-200">
-                <div className="w-full mx-auto">
+            <div className="hero min-h-screen bg-base-200 my-10">
+                <div className="w-full mx-auto py-10">
                     <div className="text-center">
                         <h1 className="text-5xl font-bold">Register Account</h1>
                     </div>
-                    <div className="card  flex-shrink-0 w-[30%] mt-5 mx-auto shadow-2xl bg-base-100">
+                    <div className="card   flex-shrink-0 xl:w-[30%] w-[90%] md:w-1/2 lg:w-[40%] mt-5 mx-auto shadow-2xl bg-base-100">
                         <form onSubmit={handleCreateUser} className="card-body">
                             <div className="form-control">
                                 <label className="label">

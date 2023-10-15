@@ -9,11 +9,11 @@ const Details = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className="w-[80%] mx-auto">
+            <div className="md:w-[80%] w-[95%] mx-auto">
                 <Link to={'/'}><p className="text-[#374151] text-2xl my-5 font-semibold flex items-center gap-2"> 
                 <AiOutlineArrowLeft></AiOutlineArrowLeft>
                 Back to home</p></Link>
-                <div className="bg-[#F4F3F0] rounded-lg  p-10 flex items-center justify-center gap-32">
+                <div className="bg-[#F4F3F0] rounded-lg  p-10 flex flex-col md:flex-row items-center justify-center md:gap-10 gap-5 lg:gap-32">
                     <img className="w-[300px]" src={photo} alt="" />
                     <div>
                         <h2 className="text-[#331A15] font-bold text-3xl mb-6">Niceties</h2>

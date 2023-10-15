@@ -20,7 +20,7 @@ const DisplayCoffee = ({ coffee, coffees, setCoffees }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/coffees/${_id}`, {
+                fetch(`https://coffee-store-server-site-3df79a1mu-tanjil-ahameds-projects.vercel.app/coffees/${_id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
@@ -41,21 +41,21 @@ const DisplayCoffee = ({ coffee, coffees, setCoffees }) => {
     }
 
     return (
-        <div className='flex items-center gap-20 justify-around bg-[#F5F4F1] py-10 px-5 rounded-lg'>
+        <div className='flex flex-col lg:flex-row items-center gap-5 lg:gap-10 justify-around bg-[#F5F4F1] py-10 px-5 rounded-lg'>
             <img className='w-[200px] h-[200px]' src={photo} alt="" />
-            <div className='space-y-3'>
+            <div className='flex flex-row lg:flex-col gap-3'>
                 <h2 className='font-semibold text-xl'>Name: <span className='text-[#5C5B5B]'>{name}</span></h2>
                 <h2 className='font-semibold text-xl'>Chef: <span className='text-[#5C5B5B]'>{chef}</span></h2>
                 <p className='font-semibold text-xl'>Price: <span className='text-[#5C5B5B]'>190</span>TK</p>
             </div>
-            <div className=''>
+            <div className='flex gap-4 flex-row lg:flex-col'>
                 <Link to={`/details/${_id}`}>
                     <div className='bg-[#D2B48C] p-3 rounded-lg'>
                         <FaRegEye className='text-white'></FaRegEye>
                     </div>
                 </Link>
                 <Link className='' to={`/update/${_id}`}>
-                    <div className='bg-[#3C393B] p-3 my-3 rounded-lg'>
+                    <div className='bg-[#3C393B] p-3 rounded-lg'>
                         <FaPen className='text-white'></FaPen>
                     </div>
                 </Link>

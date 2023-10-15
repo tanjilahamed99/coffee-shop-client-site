@@ -7,7 +7,7 @@ const Coffees = () => {
     const [coffees, setCoffees] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/coffees')
+        fetch('https://coffee-store-server-site-3df79a1mu-tanjil-ahameds-projects.vercel.app/coffees')
             .then(res => res.json())
             .then(data => setCoffees(data))
     }, [])
@@ -22,7 +22,7 @@ const Coffees = () => {
                     <MdCoffee className="text-black"></MdCoffee>
                 </button></Link>
             </div>
-            <div className="grid grid-cols-2 gap-10 container   mx-auto justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 container  mx-auto justify-center">
                 {
                     coffees.map(coffee => <DisplayCoffee coffees={coffees} setCoffees={setCoffees}
                           key={coffee._id} coffee={coffee}></DisplayCoffee>)

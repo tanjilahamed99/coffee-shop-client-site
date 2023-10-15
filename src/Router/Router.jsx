@@ -22,12 +22,12 @@ const Router = createBrowserRouter([
     {
         path: '/details/:id',
         element: <Details></Details>,
-        loader: ({ params }) => fetch(`http://localhost:5000/coffees/${params.id}`)
+        loader: ({ params }) => fetch(`https://coffee-store-server-site-3df79a1mu-tanjil-ahameds-projects.vercel.app/coffees/${params.id}`)
     },
     {
         path: '/update/:id',
         element: <UpdateCoffee></UpdateCoffee>,
-        loader: ({ params }) => fetch(`http://localhost:5000/coffees/${params.id}`)
+        loader: ({ params }) => fetch(`https://coffee-store-server-site-3df79a1mu-tanjil-ahameds-projects.vercel.app/coffees/${params.id}`)
     },
     {
         path: '/signup',
@@ -40,7 +40,7 @@ const Router = createBrowserRouter([
     {
         path: '/users',
         element: <Users></Users>,
-        loader: () => fetch('http://localhost:5000/user')
+        loader: () => fetch('https://coffee-store-server-site-3df79a1mu-tanjil-ahameds-projects.vercel.app/user')
     }
 ])
 
