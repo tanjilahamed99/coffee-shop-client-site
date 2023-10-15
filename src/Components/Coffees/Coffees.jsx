@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import DisplayCoffee from "../DisplayCoffee/DisplayCoffee";
 
 const Coffees = () => {
-
     const [coffees, setCoffees] = useState([])
 
     useEffect(() => {
@@ -25,7 +24,8 @@ const Coffees = () => {
             </div>
             <div className="grid grid-cols-2 gap-10 container   mx-auto justify-center">
                 {
-                    coffees.map(coffee => <DisplayCoffee key={coffee._id} coffee={coffee}></DisplayCoffee>)
+                    coffees.map(coffee => <DisplayCoffee coffees={coffees} setCoffees={setCoffees}
+                          key={coffee._id} coffee={coffee}></DisplayCoffee>)
                 }
             </div>
 

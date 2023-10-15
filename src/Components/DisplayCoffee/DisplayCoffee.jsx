@@ -4,7 +4,7 @@ import { AiFillDelete } from "react-icons/ai";
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 
-const DisplayCoffee = ({ coffee }) => {
+const DisplayCoffee = ({ coffee, coffees, setCoffees }) => {
     const { _id, name, chef, photo } = coffee;
 
     const handleDeleteCoffee = _id => {
@@ -32,6 +32,8 @@ const DisplayCoffee = ({ coffee }) => {
                                 'Coffee has been deleted.',
                                 'success'
                             )
+                            const remaining = coffees.filter(coffee => coffee._id !== _id)
+                            setCoffees(remaining)
                         }
                     })
             }
@@ -46,14 +48,14 @@ const DisplayCoffee = ({ coffee }) => {
                 <h2 className='font-semibold text-xl'>Chef: <span className='text-[#5C5B5B]'>{chef}</span></h2>
                 <p className='font-semibold text-xl'>Price: <span className='text-[#5C5B5B]'>190</span>TK</p>
             </div>
-            <div className='space-y-3'>
+            <div className=''>
                 <Link to={`/details/${_id}`}>
                     <div className='bg-[#D2B48C] p-3 rounded-lg'>
                         <FaRegEye className='text-white'></FaRegEye>
                     </div>
                 </Link>
-                <Link to={`/update/${_id}`}>
-                    <div className='bg-[#3C393B] p-3 rounded-lg'>
+                <Link className='' to={`/update/${_id}`}>
+                    <div className='bg-[#3C393B] p-3 my-3 rounded-lg'>
                         <FaPen className='text-white'></FaPen>
                     </div>
                 </Link>
@@ -66,7 +68,9 @@ const DisplayCoffee = ({ coffee }) => {
 };
 
 DisplayCoffee.propTypes = {
-    coffee: PropTypes.object
+    coffee: PropTypes.object,
+    setCoffees: PropTypes.func,
+    coffees: PropTypes.array
 };
 
 export default DisplayCoffee;
