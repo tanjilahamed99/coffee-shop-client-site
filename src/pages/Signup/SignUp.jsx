@@ -22,7 +22,7 @@ const SignUp = () => {
                     lastSignInTime: result.user.metadata.lastSignInTime
                 }
 
-                fetch('http://localhost:5000/user', {
+                fetch('https://coffee-store-server-site.vercel.app/user', {
                     method: "POST",
                     headers: {
                         "content-type": "application/json"

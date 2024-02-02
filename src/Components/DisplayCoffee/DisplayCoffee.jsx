@@ -20,7 +20,7 @@ const DisplayCoffee = ({ coffee, coffees, setCoffees }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/coffees/${_id}`, {
+                fetch(`https://coffee-store-server-site.vercel.app/coffees/${_id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
