@@ -20,7 +20,7 @@ const AddCoffee = () => {
         const newCoffee = { name, chef, supplier, taste, category, details, photo }
         console.log(newCoffee)
 
-        fetch('https://coffee-store-server-site-3df79a1mu-tanjil-ahameds-projects.vercel.app/coffees', {
+        fetch('http://localhost:5000/coffees', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
